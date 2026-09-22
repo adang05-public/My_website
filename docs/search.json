@@ -4,7 +4,14 @@
     "href": "posts.html",
     "title": "Blog",
     "section": "",
-    "text": "First weeks of MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nAlex Dang\n\n\n\n\n\nNo matching items"
+    "text": "Palmer Penguins\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\nAlex Dang\n\n\n\n\n\n\n\n\n\n\n\n\nPalmer Penguins in R\n\n\n\n\n\n\n\n\nSep 25, 2026\n\n\nAlex Dang\n\n\n\n\n\n\n\n\n\n\n\n\nFirst weeks of MDS\n\n\n\n\n\n\n\n\nSep 8, 2026\n\n\nAlex Dang\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/palmers_penguins_python.html",
+    "href": "posts/palmers_penguins_python.html",
+    "title": "Palmer Penguins",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER."
   },
   {
     "objectID": "index.html",
@@ -61,5 +68,12 @@
     "title": "First weeks of MDS",
     "section": "Second week",
     "text": "Second week\nWe’re just barely into the second week, and the workload is already piling up. The main issue is with the volume of work: planning and setting aside time for completion is definitely important for success. A highlight of this week was the clubs day, in which some fellow classmates from the MDS-CL cohort and I participated in by strolling around in one of the main streets at UBC, which was surprisingly tightly packed with booths from various clubs: There were clubs ranging from international student clubs (Ex. Italian, Pakistani, Chinese, etc.) to academic clubs (statistics & data analysis, aerospace engineering, etc.) to hobby clubs (anime, dance, sports, etc.). Unfortunately, the directors of the MDS program did warn that there would not be much leisure time, but checking out the clubs was certaining entertaining in and of itself."
+  },
+  {
+    "objectID": "posts/palmers_penguins_r.html",
+    "href": "posts/palmers_penguins_r.html",
+    "title": "Palmer Penguins in R",
+    "section": "",
+    "text": "Data: Palmer Penguins, Palmer Station Antarctica LTER."
   }
 ]

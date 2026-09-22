@@ -2,6 +2,8 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/palmers_penguins_python.html",
+      "/posts/palmers_penguins_r.html",
       "/posts/index.html"
     ]
   }

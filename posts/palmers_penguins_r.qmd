@@ -1,0 +1,10 @@
+---
+title: "Palmer Penguins in R"
+author: "Alex Dang"
+date: "2026-09-25"
+categories: [penguin, r]
+image: ../images\palmers_penguins.png
+--- 
+
+Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
+Palmer Station Antarctica LTER.
