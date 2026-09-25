@@ -7,7 +7,12 @@ authors = [
     { name = "Alex Dang", email = "adang05@student.ubc.ca" }
 ]
 requires-python = ">=3.14"
-dependencies = []
+dependencies = [
+    "numpy",
+    "palmerpenguins",
+    "pyyaml",
+    "matplotlib"
+]
 
 [project.scripts]
 test-repo = "test_repo:main"
