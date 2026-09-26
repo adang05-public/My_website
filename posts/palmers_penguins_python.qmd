@@ -1,5 +1,5 @@
 ---
-title: "Palmer Penguins"
+title: "Palmer Penguins Python"
 author: "Alex Dang"
 date: "2026-09-25"
 categories: [penguin, python]
@@ -8,3 +8,65 @@ image: ../images\palmers_penguins.png
 
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
 Palmer Station Antarctica LTER.
+
+Let's load in the penguins dataset, and get a brief preview with the summary statistics:
+```{python}
+from palmerpenguins import load_penguins
+
+penguins = load_penguins()
+print(penguins.head())
+penguins.describe()
+```
+
+Let's now sort the data by year, sex, and island, and return the count:
+
+```{python}
+penguins_grouped = penguins.groupby(['year', 'island', 'sex']).size().reset_index(name="count").pivot(columns=["sex"], index=["year", "island"], values=["count"]).reset_index()
+penguins_grouped.columns = [f"{col[0]}_{col[1]}".strip("_") for col in penguins_grouped.columns]
+penguins_grouped['total_population'] = penguins_grouped['count_female'] + penguins_grouped['count_male']
+penguins_grouped['Male_to_Population_ratio'] = penguins_grouped['count_male'] / penguins_grouped['total_population']
+penguins_grouped = penguins_grouped[['year', 'island', 'total_population', 'Male_to_Population_ratio']]
+penguins_grouped
+```
+
+let's plot the sex and year comparison for each island:
+```{python}
+
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import matplotlib.ticker as ticker
+import numpy as np
+
+x = penguins_grouped['year']   # X-axis coordinates
+y = penguins_grouped['Male_to_Population_ratio']  # Y-axis coordinates
+
+colours = [("cornflowerblue" if ele == "Biscoe" else ("lime" if ele == "Dream" else "lightcoral")) for ele in penguins_grouped['island']]
+
+# 3. Create the scatter plot
+scatter = plt.scatter(
+    x, y, 
+    c=colours,         
+    alpha=0.7,        
+    edgecolors='black'
+)
+
+# 4. Add annotations and titles
+plt.title("Penguins scatter plot", fontsize=14, fontweight='bold')
+plt.xlabel("Year")
+plt.ylabel("Male-to-Population ratio")
+
+labels = ['Biscoe', 'Dream', 'Torgersen']
+colours = ['cornflowerblue', 'lime', 'lightcoral']
+
+plt.legend(handles=[
+    mpatches.Patch(color=c, label=l) 
+    for c, l in zip(colours, labels)
+], title="Colour Key")
+
+# set the x-axis to have less graduations
+plt.gca().xaxis.set_major_locator(ticker.MaxNLocator(nbins=8))
+
+# 6. Display the plot
+plt.show()
+
+```

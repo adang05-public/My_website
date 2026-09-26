@@ -8,3 +8,48 @@ image: ../images\palmers_penguins.png
 
 Data: [Palmer Penguins](https://allisonhorst.github.io/palmerpenguins/),
 Palmer Station Antarctica LTER.
+
+Let's load in the palmerpenguins dataset
+```{r}
+#| message: false
+library(palmerpenguins)
+library(dplyr)
+library(tidyr)
+```
+
+Let's get the summary statistics for the penguins dataset:
+```{r}
+penguins |> head() |> print()
+penguins |> summarize(across(where(is.numeric), \(x) mean(x, na.rm = TRUE)))
+```
+
+Let's group by 
+
+```{r}
+penguins_grouped <- penguins |> drop_na(sex, island, species) |> group_by(sex, island, species) |> summarise(mean_flipper_length_mm = mean(flipper_length_mm, na.rm = TRUE), .groups = "drop") |> arrange(mean_flipper_length_mm)|>  unite("island_species", island, species, sep = "_", remove = TRUE) 
+penguins_grouped
+```
+Let's visualize the grouped data in a graph:
+```{r}
+# Load the ggplot2 library
+library(ggplot2)
+
+# Create the example data frame
+sales_data <- data.frame(
+  Product = c("Product A", "Product A", "Product B", "Product B", "Product C", "Product C"),
+  Region  = c("North", "South", "North", "South", "North", "South"),
+  Sales   = c(78, 45, 48, 68, 95, 43)
+)
+
+# Build the side-by-side bar chart
+ggplot(penguins_grouped, aes(x = island_species, y = mean_flipper_length_mm, fill = sex)) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Comparison of flipper length of male and female penguins across species and islands",
+    x = "species and island",
+    y = "mean flipper length (mm)",
+    fill = "Sex"
+  ) +
+  theme_minimal()
+```
+We can see, from that graph, that in general male penguins have very slightly longer flipper lengths than females, and the Biscoe penguins from Gentoo island had the longest flippers in general across all islands.
