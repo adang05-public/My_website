@@ -11,6 +11,8 @@ website:
       - href: posts.qmd
         text: Blog
       - about.qmd
+      
+jupyter: python3
 
 format:
   html:

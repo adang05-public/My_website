@@ -1,5 +1,5 @@
 [project]
-name = "test-repo"
+name = "my-website"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -11,7 +11,9 @@ dependencies = [
     "numpy",
     "palmerpenguins",
     "pyyaml",
-    "matplotlib"
+    "matplotlib",
+    "jupyter>=1.1.1",
+    "nbformat>=5.11.1",
 ]
 
 [project.scripts]
