@@ -201,7 +201,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <p>Data: <a href="https://allisonhorst.github.io/palmerpenguins/">Palmer Penguins</a>, Palmer Station Antarctica LTER.</p>
 <p>Let’s load in the penguins dataset, and get a brief preview with the summary statistics:</p>
-<div id="6a5a77f2" class="cell" data-execution_count="1">
+<div id="3fc547ce" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> palmerpenguins <span class="im">import</span> load_penguins</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="op">=</span> load_penguins()</span>
@@ -309,7 +309,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>Let’s now sort the data by year, sex, and island, and return the count:</p>
-<div id="0b2aafbb" class="cell" data-execution_count="2">
+<div id="72575b75" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>penguins_grouped <span class="op">=</span> penguins.groupby([<span class="st">'year'</span>, <span class="st">'island'</span>, <span class="st">'sex'</span>]).size().reset_index(name<span class="op">=</span><span class="st">"count"</span>).pivot(columns<span class="op">=</span>[<span class="st">"sex"</span>], index<span class="op">=</span>[<span class="st">"year"</span>, <span class="st">"island"</span>], values<span class="op">=</span>[<span class="st">"count"</span>]).reset_index()</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>penguins_grouped.columns <span class="op">=</span> [<span class="ss">f"</span><span class="sc">{</span>col[<span class="dv">0</span>]<span class="sc">}</span><span class="ss">_</span><span class="sc">{</span>col[<span class="dv">1</span>]<span class="sc">}</span><span class="ss">"</span>.strip(<span class="st">"_"</span>) <span class="cf">for</span> col <span class="kw">in</span> penguins_grouped.columns]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>penguins_grouped[<span class="st">'total_population'</span>] <span class="op">=</span> penguins_grouped[<span class="st">'count_female'</span>] <span class="op">+</span> penguins_grouped[<span class="st">'count_male'</span>]</span>
@@ -401,7 +401,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>let’s plot the sex and year comparison for each island:</p>
-<div id="81477f10" class="cell" data-execution_count="3">
+<div id="18fe9be3" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.patches <span class="im">as</span> mpatches</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.ticker <span class="im">as</span> ticker</span>
@@ -446,7 +446,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p>From the data, it looks like the male-to-population ratio has stayed somewhat consistent throughout the years, with the outlier being in 2007 when the ratio of males to the total population, and by extension, males to females was a bit lower in Torgersen island than the for other datapoints.</p>
+<p>From the data, it looks like the male-to-population ratio has stayed somewhat consistent throughout the years, with the outlier being in 2007 when the ratio of males to the total population, and by extension, males to females was a bit lower in Torgersen island than the ones for other datapoints.</p>
 
 
 
