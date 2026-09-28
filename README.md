@@ -21,4 +21,7 @@ Welcome to my quarto website! It currently contains 2 blog posts about penguins 
 ## To clone with HTTPS:
 
 1. run ```git clone https://github.com/adang05-public/My_website.git``` in the folder you want to clone the repository in
-2. 
+2. run ``` uv sync``` in the main repo folder to download libraries for Python
+3. run ```R``` in the main repo folder
+4. run ```renv::restore()``` to download libraries for R, and ```q()``` to leave the R terminal
+5. run ```uv run quarto preview``` or ```uv run quarto render``` to preview or render the website respectively
