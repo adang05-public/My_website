@@ -74,4 +74,4 @@ plt.show()
 From the data, it looks like the male-to-population ratio has stayed somewhat
  consistent throughout the years, with the outlier being in 2007 when the ratio
  of males to the total population, and by extension, males to females was a bit lower in Torgersen island
- than the for other datapoints.
+ than the ones for other datapoints.
